@@ -93,6 +93,14 @@ body {
   .letter{
   	vertical-align: top;
   }
+  .line{
+  	border-bottom: 1px solid white;
+  }
+  .sidebar{
+  	text-align: center;
+  	padding-right: 20px;
+  	font-size: 1.2em;
+  }
   
   @media only screen 
 	  and (min-device-width: 320px) 
@@ -188,18 +196,18 @@ body {
 				</div>
 				<div class="col-md-8 color-primary-3 box">
 					<table>
-						<tr><td class="letter">B</td><td class="numbers spacing" id="b"></td></tr>
-						<tr><td class="letter">I</td><td class="numbers spacing" id="i"></td></tr>
-						<tr><td class="letter">N</td><td class="numbers spacing" id="n"></td></tr>
-						<tr><td class="letter">G</td><td class="numbers spacing" id="g"></td></tr>
-						<tr><td class="letter">O</td><td class="numbers spacing" id="o"></td></tr>
+						<tr class="line"><td class="letter sidebar">B</td><td class="numbers spacing" id="b"></td></tr>
+						<tr class="line"><td class="letter sidebar">I</td><td class="numbers spacing" id="i"></td></tr>
+						<tr class="line"><td class="letter sidebar">N</td><td class="numbers spacing" id="n"></td></tr>
+						<tr class="line"><td class="letter sidebar">G</td><td class="numbers spacing" id="g"></td></tr>
+						<tr><td class="letter sidebar">O</td><td class="numbers spacing" id="o"></td></tr>
 					</table>
 				</div>
 			</div>
 		</div>
 	</div>
 	
-	<p style="text-align: center"><a href="http://ngblaylock.weebly.com/website.html"><img src="LogoMark.png"/></a></p>
+	<p style="text-align: center"><img src="LogoMark.png"/></p>
 
 	</body>
 	
@@ -227,31 +235,34 @@ body {
 		}
 		
 		function fullNum(num){
-		
+		//var separator = '&nbsp'+'&nbsp'+'&nbsp'+'&nbsp';
+		var separator = ' <span style="font-size: 30%; vertical-align: center;">&#9632;</span> ';
+
+
 			if (num > 0 && num < 16){
 				B.push(num);
 				B.sort(function(a, b){return a-b});				
-				document.getElementById("b").innerHTML = B.join(" . ");
+				document.getElementById("b").innerHTML = B.join(separator);
 				return("B " + num);
 			}else if (num > 15 && num < 31){
 				I.push(num);
 				I.sort(function(a, b){return a-b});				
-				document.getElementById("i").innerHTML =" " + I.join(" . ");
+				document.getElementById("i").innerHTML =" " + I.join(separator);
 				return("I " + num);
 			}else if (num > 30 && num < 46){
 				N.push(num);
 				N.sort(function(a, b){return a-b});				
-				document.getElementById("n").innerHTML =" " + N.join(" . ");
+				document.getElementById("n").innerHTML =" " + N.join(separator);
 				return("N " + num);
 			}else if (num > 45 && num < 61){
 				G.push(num);
 				G.sort(function(a, b){return a-b});				
-				document.getElementById("g").innerHTML =" " + G.join(" . ");
+				document.getElementById("g").innerHTML =" " + G.join(separator);
 				return("G " + num);
 			}else if (num > 60 && num < 76){
 				O.push(num);
 				O.sort(function(a, b){return a-b});				
-				document.getElementById("o").innerHTML =" " + O.join(" . ");
+				document.getElementById("o").innerHTML =" " + O.join(separator);
 				return("O " + num);
 			}else{
 				return("Not a number");
