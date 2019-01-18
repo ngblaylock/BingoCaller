@@ -1,0 +1,112 @@
+body {
+  background-color: #4d2891;
+}
+
+.row {
+  background-color: #26114e;
+  padding: 15px;
+}
+
+#input {
+  background: white;
+  text-align: center;
+  font-size: 4.5em;
+  border-radius: 4px;
+}
+
+.btn-call {
+  color: #fff !important;
+  background-color: #4d2891;
+  border-color: #231241;
+  margin-bottom: 15p;
+}
+
+.btn-call:hover {
+  background-color: #472585;
+  border-color: #1c0f35;
+}
+
+.btn-call:active:focus, .btn-call:active:hover {
+  background-color: #42227d;
+  border-color: #180c2d;
+}
+
+.bingo-cols table {
+  color: white;
+  width: 100%;
+}
+
+.bingo-cols td {
+  padding: 5px 15px;
+}
+
+.bingo-cols td:first-child {
+  font-size: 2em;
+  width: 30px;
+  text-align: center;
+  border-right: 1px solid white;
+}
+
+.bingo-cols td:not(:first-child) {
+  color: #dcd0f3;
+  font-size: 1.2em;
+}
+
+.bingo-cols tr:not(:last-child) {
+  border-bottom: 1px solid white;
+}
+
+.bingo-cols td span {
+  color: #4d2891;
+}
+
+.logo {
+  max-height: 45px;
+  margin: 30px;
+}
+
+.footer a {
+  color: #dcd0f3;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 0px;
+  }
+}
+
+body.blackout {
+  background-color: #292929;
+}
+
+body.blackout .row {
+  background-color: #111111;
+}
+
+body.blackout .btn-call {
+  background-color: #292929;
+  border-color: black;
+}
+
+body.blackout .btn-call:hover {
+  background-color: #212121;
+  border-color: black;
+}
+
+body.blackout .btn-call:active:focus, body.blackout .btn-call:active:hover {
+  background-color: #1c1c1c;
+  border-color: black;
+}
+
+body.blackout td:not(:first-child) {
+  color: #dddddd;
+}
+
+body.blackout td span {
+  color: #292929;
+}
+
+body.blackout .footer a {
+  color: #dddddd;
+}
+/*# sourceMappingURL=styles.css.map */

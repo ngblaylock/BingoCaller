@@ -1,0 +1,116 @@
+$primary: rgb(38, 17, 78);
+$secondary: rgb(77, 40, 145);
+$tertiary: rgb(220, 208, 243);
+$blackout1: rgb(17, 17, 17);
+$blackout2: rgb(41, 41, 41);
+$blackout3: rgb(221, 221, 221);
+
+body{
+    background-color: $secondary;
+}
+
+.row{
+    background-color: $primary;
+    padding: 15px;
+}
+
+#input{
+    background: white;
+    text-align: center;
+    font-size: 4.5em;
+    border-radius: 4px;
+}
+
+.btn-call{
+    color: #fff !important;
+    background-color: $secondary;
+    border-color: darken($secondary, 20%);
+    margin-bottom: 15p
+}
+
+.btn-call:hover{
+    background-color: darken($secondary, 3%);
+    border-color: darken($secondary, 23%);
+}
+
+.btn-call:active:focus, .btn-call:active:hover{
+    background-color: darken($secondary, 5%);
+    border-color: darken($secondary, 25%);
+}
+
+.bingo-cols{
+    table{
+        color: white;
+        width: 100%;
+    }
+    td{
+        padding: 5px 15px;
+    }
+    td:first-child{
+        font-size: 2em;
+        width: 30px;
+        text-align: center;
+        border-right: 1px solid white;
+    }
+    td:not(:first-child){
+        color: $tertiary;
+        font-size: 1.2em;
+    }
+    tr:not(:last-child){
+        border-bottom: 1px solid white;
+    }
+    td span{
+        color: $secondary;
+    }
+}
+
+.logo{
+    max-height: 45px;
+    margin: 30px;
+}
+
+.footer a{
+    color: $tertiary;
+}
+
+@media (min-width: 768px){
+.navbar {
+    border-radius: 0px;
+}
+}
+
+
+body.blackout{
+    background-color: $blackout2;
+
+    .row{
+        background-color: $blackout1;
+    }
+
+    .btn-call{
+        background-color: $blackout2;
+        border-color: darken($blackout2, 20%);
+    }
+
+    .btn-call:hover{
+        background-color: darken($blackout2, 3%);
+        border-color: darken($blackout2, 23%);
+    }
+
+    .btn-call:active:focus, .btn-call:active:hover{
+        background-color: darken($blackout2, 5%);
+        border-color: darken($blackout2, 25%);
+    }
+
+    td:not(:first-child){
+        color: $blackout3;
+    }
+    td span{
+        color: $blackout2;
+    }
+
+    .footer a{
+        color: $blackout3;
+    }
+
+}

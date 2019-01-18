@@ -8,146 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <style>
-        /* As hex codes */
-        
-        .color-primary-0 {
-            background-color: #4D2D73
-        }
-        /* Main Primary color */
-        
-        .color-primary-1 {
-            background-color: #9078AD
-        }
-        
-        .color-primary-2 {
-            background-color: #6C4E90
-        }
-        
-        .color-primary-3 {
-            background-color: #321456
-        }
-        
-        .color-primary-4 {
-            background-color: #1D053A
-        }
-        
-        html,
-        body {
-            height: 100%;
-            width: 100%;
-            padding: 0;
-            margin: 0;
-            background-color: #321456;
-        }
-        
-        body {
-            background: #FFF url("background.jpg") no-repeat bottom center;
-        }
-        
-        .spacing {
-            padding-left: 20px;
-            width: 100%;
-        }
-        
-        .box {
-            padding: 30px;
-        }
-        
-        .myButton {
-            border-radius: 20px;
-            height: 40px;
-            margin-top: 10px;
-            width: 100%;
-        }
-        
-        .lastNum {
-            color: white;
-            padding: 30px;
-        }
-        
-        .white {
-            background-color: white;
-            height: 90px;
-            border-radius: 20px;
-        }
-        
-        .white p {
-            color: #321456;
-            text-align: center;
-            font-size: 2.4em;
-        }
-        
-        body {
-            font: 20px Montserrat, sans-serif;
-            line-height: 1.8;
-        }
-        
-        td {
-            color: white;
-        }
-        
-        .margin {
-            margin-bottom: 45px;
-        }
-        
-        .container-fluid {
-            padding-top: 70px;
-            padding-bottom: 70px;
-        }
-        
-        .navbar {
-            padding-top: 15px;
-            padding-bottom: 15px;
-            border: 0;
-            border-radius: 0;
-            margin-bottom: 0;
-            font-size: 12px;
-            letter-spacing: 5px;
-        }
-        
-        .navbar-brand:hover {
-            color: #321456 !important;
-        }
-        
-        .navbar-nav li a:hover {
-            color: #321456 !important;
-        }
-        
-        #footerModal {
-            float: left !important;
-            font-size: 50%;
-        }
-        
-        .modal-body {
-            font-size: 75%;
-        }
-        
-        .letter {
-            vertical-align: top;
-        }
-        
-        .line {
-            border-bottom: 1px solid white;
-        }
-        
-        .sidebar {
-            text-align: center;
-            padding-right: 20px;
-            font-size: 1.2em;
-        }
-        
-        @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-            img {
-                width: 100%;
-            }
-        }
-    </style>
 </head>
 
-<body onload="newGame()">
+<body>
     <!-- NewGame Modal -->
     <div id="newGameModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
@@ -155,13 +21,14 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">New Game</h4> </div>
+                    <h4 class="modal-title">New Game</h4>
+                </div>
                 <div class="modal-body">
                     <p>Click "call" or press "space" to get a new number.</p>
                     <p>Previously called numbers will appear in the darker box.</p>
                 </div>
                 <div class="modal-footer">
-                    <button onclick="newGame()" type="button" class="btn btn-primary" data-dismiss="modal">New Game</button>
+                    <button type="button" class="btn btn-primary newGame" data-dismiss="modal">New Game</button>
                 </div>
             </div>
         </div>
@@ -173,16 +40,23 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Bingo Caller by Ventura9</h4> </div>
+                    <h4 class="modal-title">Bingo Caller</h4>
+                </div>
                 <div class="modal-body">
-                    <p>This was a project that I decided to make after an activity where I helped run a bingo game. One person called out the numbers, and I wrote the numbers called on a word document that was projected for the players to see what numbers were called. As I ran the word document, I realized that there was a better way that it could work, and run by one person.</p>
-                    <br>
-                    <p>The program is simple. An array from 1–75 is created. Then the array is shuffled. When the call button is clicked, the first number in the array is taken out of the array, and sent to find the associated letter. When the letter is found, it will print it on the screen, and the most recent letter and number combination is in a large font, indicating that it was the most recent. When all the numbers are printed out, it automatically sorts it by the number in ascending order.</p>
-                    <hr>
-                    <p>This website took about 5 hours to create</p>
+                    <p>This project was initially inspired from an activity where I helped run a bingo game. One
+                        person called out the numbers, and I wrote the numbers called on a word document that was
+                        projected for the players to see what numbers were called. As I ran the word document, I
+                        realized that there was a better way that it could work, and run by one person.</p>
+                    <p>The program is simple. An array from 1–75 is created. Then the array is shuffled. When the call
+                        button is clicked, the first number in the array is taken out of the array, and sent to find
+                        the associated letter. When the letter is found, it will print it on the screen, and the most
+                        recent letter and number combination is in a large font, indicating that it was the most
+                        recent. When all the numbers are printed out, it automatically sorts it by the number in
+                        ascending order.</p>
+                        <p>I have learned a lot over the past few years, including SASS and jQuery and decided to implement both when working on this updated project. Another iteration may include printable bingo cards that randomly generate each card to be unique.</p>
                 </div>
                 <div class="modal-footer">
-                    <p id="footerModal">Ventura9 by Nathan Blaylock</p>
+                    <p id="footerModal">By Nathan Blaylock</p>
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -192,7 +66,9 @@
     <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="navbar-brand" href="#" onclick="newGame()">Bingo Caller</a> </div>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="navbar-brand newGame"
+                    href="./">Bingo Caller</a> </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a data-toggle="modal" data-target="#newGameModal" href="#">New Game</a></li>
@@ -202,155 +78,49 @@
         </div>
     </nav>
     <!-- First Container -->
-    <div class="container-fluid bg-1 color-primary-1">
+    <div class="container-fluid">
         <div class="container">
-            <div class="row color-primary-2">
-                <div class="col-md-4  lastNum">
-                    <div class="white">
+            <div class="row">
+                <div class="col-md-4">
+                    <div>
                         <p id="input">Start</p>
                     </div>
                     <div>
-                        <button onclick="generateNumber()" type="button" class="myButton btn btn-primary">Call</button>
+                        <button type="button" class="btn btn-call btn-block btn-lg" id="call">Call</button>
                     </div>
                 </div>
-                <div class="col-md-8 color-primary-3 box">
+                <div class="col-md-8 bingo-cols">
                     <table>
-                        <tr class="line">
-                            <td class="letter sidebar">B</td>
-                            <td class="numbers spacing" id="b"></td>
-                        </tr>
-                        <tr class="line">
-                            <td class="letter sidebar">I</td>
-                            <td class="numbers spacing" id="i"></td>
-                        </tr>
-                        <tr class="line">
-                            <td class="letter sidebar">N</td>
-                            <td class="numbers spacing" id="n"></td>
-                        </tr>
-                        <tr class="line">
-                            <td class="letter sidebar">G</td>
-                            <td class="numbers spacing" id="g"></td>
+                        <tr>
+                            <td>B</td>
+                            <td id="b"></td>
                         </tr>
                         <tr>
-                            <td class="letter sidebar">O</td>
-                            <td class="numbers spacing" id="o"></td>
+                            <td>I</td>
+                            <td id="i"></td>
+                        </tr>
+                        <tr>
+                            <td>N</td>
+                            <td id="n"></td>
+                        </tr>
+                        <tr>
+                            <td>G</td>
+                            <td id="g"></td>
+                        </tr>
+                        <tr>
+                            <td>O</td>
+                            <td id="o"></td>
                         </tr>
                     </table>
                 </div>
             </div>
         </div>
     </div>
-    <p style="text-align: center">
-        <a href="http://ngblaylock.weebly.com/website.html"><img src="LogoMark.png" /></a>
+    <p style="text-align: center" class='footer'>
+        <a href="http://nathanblaylock.com"><img alt="Nathan's Logo" class="logo" src="LogoMark.png" /><br>v2 &copy; Nathan Blaylock 2019</a>
     </p>
 </body>
 <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++     SCRIPT     +++++++++++++++++++++++++++++++++++++++++++++++++ -->
-<script>
-    function shuffle(array) {
-        var currentIndex = array.length
-            , temporaryValue, randomIndex;
-        // While there remain elements to shuffle...
-        while (0 !== currentIndex) {
-            // Pick a remaining element...
-            randomIndex = Math.floor(Math.random() * currentIndex);
-            currentIndex -= 1;
-            // And swap it with the current element.
-            temporaryValue = array[currentIndex];
-            array[currentIndex] = array[randomIndex];
-            array[randomIndex] = temporaryValue;
-        }
-        return array;
-    }
-
-    function fullNum(num) {
-        //var separator = '&nbsp'+'&nbsp'+'&nbsp'+'&nbsp';
-        var separator = ' <span style="font-size: 30%; vertical-align: center;">&#9632;</span> ';
-        if (num > 0 && num < 16) {
-            B.push(num);
-            B.sort(function (a, b) {
-                return a - b
-            });
-            document.getElementById("b").innerHTML = B.join(separator);
-            return ("B " + num);
-        }
-        else if (num > 15 && num < 31) {
-            I.push(num);
-            I.sort(function (a, b) {
-                return a - b
-            });
-            document.getElementById("i").innerHTML = " " + I.join(separator);
-            return ("I " + num);
-        }
-        else if (num > 30 && num < 46) {
-            N.push(num);
-            N.sort(function (a, b) {
-                return a - b
-            });
-            document.getElementById("n").innerHTML = " " + N.join(separator);
-            return ("N " + num);
-        }
-        else if (num > 45 && num < 61) {
-            G.push(num);
-            G.sort(function (a, b) {
-                return a - b
-            });
-            document.getElementById("g").innerHTML = " " + G.join(separator);
-            return ("G " + num);
-        }
-        else if (num > 60 && num < 76) {
-            O.push(num);
-            O.sort(function (a, b) {
-                return a - b
-            });
-            document.getElementById("o").innerHTML = " " + O.join(separator);
-            return ("O " + num);
-        }
-        else {
-            return ("Not a number");
-        }
-    }
-
-    function generateNumber() {
-        if (numbers.length > 0) {
-            var fullNumber = fullNum(numbers[0]);
-            document.getElementById("input").innerHTML = fullNumber;
-            numbers.shift();
-        }
-        else {
-            document.getElementById("input").innerHTML = "Blackout";
-        }
-    }
-    $(window).keypress(function (e) {
-        if (e.keyCode === 32) {
-            e.preventDefault();
-            generateNumber();
-        }
-    });
-
-    function newGame() {
-        document.getElementById("input").innerHTML = "Start";
-        document.getElementById("b").innerHTML = " ";
-        document.getElementById("i").innerHTML = " ";
-        document.getElementById("n").innerHTML = " ";
-        document.getElementById("g").innerHTML = " ";
-        document.getElementById("o").innerHTML = " ";
-        B = []
-        I = []
-        N = []
-        G = []
-        O = []
-        numbers = []
-        for (i = 0; i < 75; i++) {
-            numbers.push(i + 1);
-        }
-        shuffle(numbers);
-    }
-    var B = []
-    var I = []
-    var N = []
-    var G = []
-    var O = []
-    var numbers = []
-</script>
+<script src="script.js" type="text/javascript"></script>   
 
 </html>
