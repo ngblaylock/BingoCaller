@@ -1,3 +1,8 @@
+var B = [], I = [], N = [], G = [], O = [];
+var numbers = [];
+var timerStart = $('#timer-count').val();
+var clearTimer = false;
+
 function shuffle(array) {
     var currentIndex = array.length
         , temporaryValue, randomIndex;
@@ -14,50 +19,23 @@ function shuffle(array) {
     return array;
 }
 
-function fullNum(num) {
-    var separator = ' <span>•</span> ';
-    if (num > 0 && num < 16) {
-        B.push(num);
-        B.sort(function (a, b) {
-            return a - b
-        });
-        $('#b').html(B.join(separator));
-        return ("B " + num);
-    }
-    else if (num > 15 && num < 31) {
-        I.push(num);
-        I.sort(function (a, b) {
-            return a - b
-        });
-        $('#i').html(B.join(separator));
-        return ("I " + num);
-    }
-    else if (num > 30 && num < 46) {
-        N.push(num);
-        N.sort(function (a, b) {
-            return a - b
-        });
-        $('#n').html(B.join(separator));
-        return ("N " + num);
-    }
-    else if (num > 45 && num < 61) {
-        G.push(num);
-        G.sort(function (a, b) {
-            return a - b
-        });
-        $('#g').html(B.join(separator));
-        return ("G " + num);
-    }
-    else if (num > 60 && num < 76) {
-        O.push(num);
-        O.sort(function (a, b) {
-            return a - b
-        });
-        $('#o').html(B.join(separator));
-        return ("O " + num);
-    }
-    else {
-        return ("Not a number");
+function clearTime(){
+    $('.timer-display').text("");
+    clearTimer = true;
+    $('#timer-stop, #timer').toggleClass('hidden');
+}
+
+function startTimer(n) {
+    if(clearTimer){
+        return;
+    } else if (n <= 0) {
+        callNumber()
+        startTimer(timerStart);
+    } else {
+        $('.timer-display').text(n);
+        setTimeout(function () {
+            startTimer(n - 1);
+        }, 1000);
     }
 }
 
@@ -72,11 +50,9 @@ function generateNumber() {
     }
 }
 
-function display(x, y, z){
+function display(x, y, z) {
     $('#input').html(x.toUpperCase() + " " + y);
-    console.log(z);
     z.push(y);
-    console.log(x);
     z.sort(function (a, b) {
         return a - b
     });
@@ -84,23 +60,25 @@ function display(x, y, z){
     $("#" + x).html(z);
 }
 
-function callNumber(){
+function callNumber() {
     // 1. get in the numbers array
     var numToCall = numbers.pop();
-    if(numToCall > 0 && numToCall <= 15){
+    if (numToCall > 0 && numToCall <= 15) {
         display("b", numToCall, B)
-    }else if(numToCall > 15 && numToCall <= 30){
+    } else if (numToCall > 15 && numToCall <= 30) {
         display("i", numToCall, I)
-    }else if(numToCall > 30 && numToCall <= 45){
+    } else if (numToCall > 30 && numToCall <= 45) {
         display("n", numToCall, N)
-    }else if(numToCall > 45 && numToCall <= 60){
+    } else if (numToCall > 45 && numToCall <= 60) {
         display("g", numToCall, G)
-    }else if(numToCall > 60 && numToCall <= 75){
+    } else if (numToCall > 60 && numToCall <= 75) {
         display("o", numToCall, O)
-    }else if(typeof numToCall === 'undefined'){
+    } else if (typeof numToCall === 'undefined') {
         $('#input').html('Blackout!');
         $('body').addClass('blackout');
-    }else{
+        $('#call').text('Game Over').addClass('disabled');
+        clearTime();
+    } else {
         alert(numToCall + "There is an error with this program. Let me know at me@nathanblaylock.com")
     }
 }
@@ -120,15 +98,31 @@ function newGame() {
     numbers = shuffle(numbers);
 }
 
-$('#call').click(function(){
+$('#call').click(function () {
     callNumber()
 });
-$('.newGame').click(function(){
+
+$('.newGame').click(function () {
+    $('#input').html('Start!');
+        $('body').removeClass('blackout');
+        $('#call').text('Call').removeClass('disabled');
+    timerStart = $('#timer-count').val();
     newGame()
 });
 
-$(document).ready(function(){   
-    var B = [], I = [], N = [], G = [], O = [];
-    var numbers = [];
+$('#timer').click(function(){
+    $('#timer-stop, #timer').toggleClass('hidden');
+    clearTimer = false;
+    callNumber();
+    
+    startTimer(timerStart);
+    
+});
+
+$('#timer-stop').click(function (){
+    clearTime();
+});
+
+$(document).ready(function () {
     newGame();
 });

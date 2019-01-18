@@ -9,13 +9,72 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <!-- NewGame Modal -->
-    <div id="newGameModal" class="modal fade" role="dialog">
+    <!-- Navbar -->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="navbar-brand newGame"
+                    href="./">Bingo Caller</a> </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a data-toggle="modal" data-target="#newGameModal" href="#">New Game</a></li>
+                    <li><a data-toggle="modal" data-target="#myModal" href="#">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- First Container -->
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div>
+                        <p id="input">Start</p>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-call btn-block btn-lg" id="call">Call</button>
+                        <div class="timer-group"><button id="timer"><i class="far fa-clock"></i> Start Timer</button><button id="timer-stop" class='hidden'><i class="fas fa-stop"></i> Stop Timer</button><span class="timer-display"></span></div>
+                    </div>
+                </div>
+                <div class="col-md-8 bingo-cols">
+                    <table>
+                        <tr>
+                            <td>B</td>
+                            <td id="b"></td>
+                        </tr>
+                        <tr>
+                            <td>I</td>
+                            <td id="i"></td>
+                        </tr>
+                        <tr>
+                            <td>N</td>
+                            <td id="n"></td>
+                        </tr>
+                        <tr>
+                            <td>G</td>
+                            <td id="g"></td>
+                        </tr>
+                        <tr>
+                            <td>O</td>
+                            <td id="o"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p style="text-align: center" class='footer'>
+        <a href="http://nathanblaylock.com"><img alt="Nathan's Logo" class="logo" src="LogoMark.png" /><br>v2 &copy; Nathan Blaylock 2019</a>
+    </p>
+      <!-- NewGame Modal -->
+      <div id="newGameModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -26,6 +85,9 @@
                 <div class="modal-body">
                     <p>Click "call" or press "space" to get a new number.</p>
                     <p>Previously called numbers will appear in the darker box.</p>
+                    <hr>
+                    <label for="timer-count">Set how many seconds for the timer</label>
+                    <input type="text" class="form-control" value="15" id="timer-count">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary newGame" data-dismiss="modal">New Game</button>
@@ -62,63 +124,6 @@
             </div>
         </div>
     </div>
-    <!-- Navbar -->
-    <nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="navbar-brand newGame"
-                    href="./">Bingo Caller</a> </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a data-toggle="modal" data-target="#newGameModal" href="#">New Game</a></li>
-                    <li><a data-toggle="modal" data-target="#myModal" href="#">About</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- First Container -->
-    <div class="container-fluid">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div>
-                        <p id="input">Start</p>
-                    </div>
-                    <div>
-                        <button type="button" class="btn btn-call btn-block btn-lg" id="call">Call</button>
-                    </div>
-                </div>
-                <div class="col-md-8 bingo-cols">
-                    <table>
-                        <tr>
-                            <td>B</td>
-                            <td id="b"></td>
-                        </tr>
-                        <tr>
-                            <td>I</td>
-                            <td id="i"></td>
-                        </tr>
-                        <tr>
-                            <td>N</td>
-                            <td id="n"></td>
-                        </tr>
-                        <tr>
-                            <td>G</td>
-                            <td id="g"></td>
-                        </tr>
-                        <tr>
-                            <td>O</td>
-                            <td id="o"></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-    <p style="text-align: center" class='footer'>
-        <a href="http://nathanblaylock.com"><img alt="Nathan's Logo" class="logo" src="LogoMark.png" /><br>v2 &copy; Nathan Blaylock 2019</a>
-    </p>
 </body>
 <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++     SCRIPT     +++++++++++++++++++++++++++++++++++++++++++++++++ -->
 <script src="script.js" type="text/javascript"></script>   

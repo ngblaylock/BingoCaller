@@ -9,6 +9,26 @@ body{
     background-color: $secondary;
 }
 
+.timer-group{
+    text-align: center;
+    padding: 10px;
+    span{
+        display: block;
+        color: $tertiary;
+        font-size: 2em;
+    }
+    button{
+        background: none !important;
+        border: none;
+        color: $tertiary;
+        text-decoration: none;
+        padding: 3px 6px;
+        &:hover{
+            border-bottom: 1px solid $tertiary;
+        }
+    }
+}
+
 .row{
     background-color: $primary;
     padding: 15px;
@@ -93,13 +113,13 @@ body.blackout{
     }
 
     .btn-call:hover{
-        background-color: darken($blackout2, 3%);
-        border-color: darken($blackout2, 23%);
+        background-color: darken($blackout2, 0%);
+        border-color: darken($blackout2, 20%);
     }
 
     .btn-call:active:focus, .btn-call:active:hover{
-        background-color: darken($blackout2, 5%);
-        border-color: darken($blackout2, 25%);
+        background-color: darken($blackout2, 0%);
+        border-color: darken($blackout2, 20%);
     }
 
     td:not(:first-child){

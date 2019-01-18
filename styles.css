@@ -2,6 +2,29 @@ body {
   background-color: #4d2891;
 }
 
+.timer-group {
+  text-align: center;
+  padding: 10px;
+}
+
+.timer-group span {
+  display: block;
+  color: #dcd0f3;
+  font-size: 2em;
+}
+
+.timer-group button {
+  background: none !important;
+  border: none;
+  color: #dcd0f3;
+  text-decoration: none;
+  padding: 3px 6px;
+}
+
+.timer-group button:hover {
+  border-bottom: 1px solid #dcd0f3;
+}
+
 .row {
   background-color: #26114e;
   padding: 15px;
@@ -89,12 +112,12 @@ body.blackout .btn-call {
 }
 
 body.blackout .btn-call:hover {
-  background-color: #212121;
+  background-color: #292929;
   border-color: black;
 }
 
 body.blackout .btn-call:active:focus, body.blackout .btn-call:active:hover {
-  background-color: #1c1c1c;
+  background-color: #292929;
   border-color: black;
 }
 
