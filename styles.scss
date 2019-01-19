@@ -6,7 +6,7 @@ $blackout2: rgb(41, 41, 41);
 $blackout3: rgb(221, 221, 221);
 
 body{
-    background-color: $secondary;
+    background-color: $primary;
 }
 
 .timer-group{
@@ -29,10 +29,10 @@ body{
     }
 }
 
-.row{
-    background-color: $primary;
-    padding: 15px;
-}
+// .row{
+//     background-color: $primary;
+//     padding: 15px;
+// }
 
 #input{
     background: white;
@@ -99,13 +99,33 @@ body{
 }
 }
 
+.bingo-logo {
+    width: 100px;
+    margin-top: -17px;
+  }
+
+  .navbar{
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+  
+  .navbar-nav li a:hover{
+      border-bottom: 2px solid $primary;
+      padding-bottom: 5px;
+  }
+
+  footer{
+      border-top: 1px solid $secondary;
+      margin-top: 30px;
+  }
+
 
 body.blackout{
-    background-color: $blackout2;
+    background-color: $blackout1;
 
-    .row{
-        background-color: $blackout1;
-    }
+    // .row{
+    //     background-color: $blackout1;
+    // }
 
     .btn-call{
         background-color: $blackout2;

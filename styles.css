@@ -1,5 +1,5 @@
 body {
-  background-color: #4d2891;
+  background-color: #26114e;
 }
 
 .timer-group {
@@ -23,11 +23,6 @@ body {
 
 .timer-group button:hover {
   border-bottom: 1px solid #dcd0f3;
-}
-
-.row {
-  background-color: #26114e;
-  padding: 15px;
 }
 
 #input {
@@ -98,11 +93,27 @@ body {
   }
 }
 
-body.blackout {
-  background-color: #292929;
+.bingo-logo {
+  width: 100px;
+  margin-top: -17px;
 }
 
-body.blackout .row {
+.navbar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.navbar-nav li a:hover {
+  border-bottom: 2px solid #26114e;
+  padding-bottom: 5px;
+}
+
+footer {
+  border-top: 1px solid #4d2891;
+  margin-top: 30px;
+}
+
+body.blackout {
   background-color: #111111;
 }
 
