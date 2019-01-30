@@ -1,11 +1,15 @@
-var B = [], I = [], N = [], G = [], O = [];
+var B = [],
+    I = [],
+    N = [],
+    G = [],
+    O = [];
 var numbers = [];
 var timerStart = $('#timer-count').val();
 var clearTimer = false;
 
 function shuffle(array) {
-    var currentIndex = array.length
-        , temporaryValue, randomIndex;
+    var currentIndex = array.length,
+        temporaryValue, randomIndex;
     // While there remain elements to shuffle...
     while (0 !== currentIndex) {
         // Pick a remaining element...
@@ -19,14 +23,15 @@ function shuffle(array) {
     return array;
 }
 
-function clearTime(){
+function clearTime() {
     $('.timer-display').text("");
     clearTimer = true;
-    $('#timer-stop, #timer').toggleClass('hidden');
+    $('#timer-stop, #timer').toggleClass('d-none');
 }
 
 function startTimer(n) {
-    if(clearTimer){
+    console.log(n)
+    if (clearTimer) {
         return;
     } else if (n <= 0) {
         callNumber()
@@ -44,8 +49,7 @@ function generateNumber() {
         var fullNumber = fullNum(numbers[0]);
         document.getElementById("input").innerHTML = fullNumber;
         numbers.shift();
-    }
-    else {
+    } else {
         document.getElementById("input").innerHTML = "Blackout";
     }
 }
@@ -84,6 +88,10 @@ function callNumber() {
 }
 
 function newGame() {
+    $('#input').html('Start!');
+    $('body').removeClass('blackout');
+    $('#call').text('Call').removeClass('disabled');
+    timerStart = $('#timer-count').val();
     $('#input').html("Start");
     $('#b').html("");
     $('#i').html("");
@@ -102,24 +110,14 @@ $('#call').click(function () {
     callNumber()
 });
 
-$('.newGame').click(function () {
-    $('#input').html('Start!');
-        $('body').removeClass('blackout');
-        $('#call').text('Call').removeClass('disabled');
-    timerStart = $('#timer-count').val();
-    newGame()
-});
-
-$('#timer').click(function(){
-    $('#timer-stop, #timer').toggleClass('hidden');
+$('#timer').click(function () {
+    $('#timer-stop, #timer').toggleClass('d-none');
     clearTimer = false;
     callNumber();
-    
     startTimer(timerStart);
-    
 });
 
-$('#timer-stop').click(function (){
+$('#timer-stop').click(function () {
     clearTime();
 });
 

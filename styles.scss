@@ -4,153 +4,185 @@ $tertiary: rgb(220, 208, 243);
 $blackout1: rgb(17, 17, 17);
 $blackout2: rgb(41, 41, 41);
 $blackout3: rgb(221, 221, 221);
+$footerHeight: 130px;
 
-body{
-    background-color: $primary;
+html {
+    position: relative;
+    min-height: 100%;
 }
 
-.timer-group{
+body {
+    background-color: $primary;
+    margin-bottom: $footerHeight;
+}
+
+.timer-group {
     text-align: center;
     padding: 10px;
-    span{
+
+    span {
         display: block;
         color: $tertiary;
         font-size: 2em;
     }
-    button{
+
+    button {
         background: none !important;
         border: none;
         color: $tertiary;
         text-decoration: none;
         padding: 3px 6px;
-        &:hover{
+
+        &:hover {
             border-bottom: 1px solid $tertiary;
         }
     }
 }
 
-// .row{
-//     background-color: $primary;
-//     padding: 15px;
-// }
-
-#input{
+#input {
     background: white;
     text-align: center;
     font-size: 4.5em;
     border-radius: 4px;
 }
 
-.btn-call{
+.btn-call {
     color: #fff !important;
     background-color: $secondary;
     border-color: darken($secondary, 20%);
     margin-bottom: 15p
 }
 
-.btn-call:hover{
+.btn-call:hover {
     background-color: darken($secondary, 3%);
     border-color: darken($secondary, 23%);
 }
 
-.btn-call:active:focus, .btn-call:active:hover{
+.btn-call:active:focus,
+.btn-call:active:hover {
     background-color: darken($secondary, 5%);
     border-color: darken($secondary, 25%);
 }
 
-.bingo-cols{
-    table{
+.bingo-cols {
+    table {
         color: white;
         width: 100%;
     }
-    td{
+
+    td {
         padding: 5px 15px;
     }
-    td:first-child{
+
+    td:first-child {
         font-size: 2em;
         width: 30px;
         text-align: center;
         border-right: 1px solid white;
     }
-    td:not(:first-child){
+
+    td:not(:first-child) {
         color: $tertiary;
         font-size: 1.2em;
     }
-    tr:not(:last-child){
+
+    tr:not(:last-child) {
         border-bottom: 1px solid white;
     }
-    td span{
+
+    td span {
         color: $secondary;
     }
 }
 
-.logo{
+.logo {
     max-height: 45px;
     margin: 30px;
 }
 
-.footer a{
-    color: $tertiary;
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: $footerHeight; 
+    padding-top: 15px;
+    text-align: center;
+    p{
+        color: white;
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid $secondary
+    }
+    a {
+        color: $tertiary;
+        &:hover{
+            color: white;
+        }
+    }
 }
 
-@media (min-width: 768px){
-.navbar {
-    border-radius: 0px;
-}
+@media (min-width: 768px) {
+    .navbar {
+        border-radius: 0px;
+    }
 }
 
 .bingo-logo {
-    width: 100px;
-    margin-top: -17px;
-  }
+    height: 50px;
+}
 
-  .navbar{
-      padding-top: 10px;
-      padding-bottom: 10px;
-  }
-  
-  .navbar-nav li a:hover{
-      border-bottom: 2px solid $primary;
-      padding-bottom: 5px;
-  }
+.navbar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 
-  footer{
-      border-top: 1px solid $secondary;
-      margin-top: 30px;
-  }
+.navbar-nav li a{
+border-bottom: 2px solid rgba(255, 255, 255, 0);
+
+&:hover {
+    border-bottom: 2px solid $primary;
+}
+}
 
 
-body.blackout{
+body.blackout {
     background-color: $blackout1;
 
     // .row{
     //     background-color: $blackout1;
     // }
 
-    .btn-call{
+    .btn-call {
         background-color: $blackout2;
         border-color: darken($blackout2, 20%);
     }
 
-    .btn-call:hover{
+    .btn-call:hover {
         background-color: darken($blackout2, 0%);
         border-color: darken($blackout2, 20%);
     }
 
-    .btn-call:active:focus, .btn-call:active:hover{
+    .btn-call:active:focus,
+    .btn-call:active:hover {
         background-color: darken($blackout2, 0%);
         border-color: darken($blackout2, 20%);
     }
 
-    td:not(:first-child){
+    td:not(:first-child) {
         color: $blackout3;
     }
-    td span{
+
+    td span {
         color: $blackout2;
     }
 
-    .footer a{
-        color: $blackout3;
+    footer {
+        p{
+            border-top: 1px solid $blackout2
+        }
+        a {
+            color: $blackout3;
+        }
     }
 
 }

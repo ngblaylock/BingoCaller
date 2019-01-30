@@ -1,5 +1,11 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   background-color: #26114e;
+  margin-bottom: 130px;
 }
 
 .timer-group {
@@ -44,7 +50,8 @@ body {
   border-color: #1c0f35;
 }
 
-.btn-call:active:focus, .btn-call:active:hover {
+.btn-call:active:focus,
+.btn-call:active:hover {
   background-color: #42227d;
   border-color: #180c2d;
 }
@@ -83,8 +90,28 @@ body {
   margin: 30px;
 }
 
-.footer a {
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 130px;
+  padding-top: 15px;
+  text-align: center;
+}
+
+footer p {
+  color: white;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #4d2891;
+}
+
+footer a {
   color: #dcd0f3;
+}
+
+footer a:hover {
+  color: white;
 }
 
 @media (min-width: 768px) {
@@ -94,8 +121,7 @@ body {
 }
 
 .bingo-logo {
-  width: 100px;
-  margin-top: -17px;
+  height: 50px;
 }
 
 .navbar {
@@ -103,14 +129,12 @@ body {
   padding-bottom: 10px;
 }
 
-.navbar-nav li a:hover {
-  border-bottom: 2px solid #26114e;
-  padding-bottom: 5px;
+.navbar-nav li a {
+  border-bottom: 2px solid rgba(255, 255, 255, 0);
 }
 
-footer {
-  border-top: 1px solid #4d2891;
-  margin-top: 30px;
+.navbar-nav li a:hover {
+  border-bottom: 2px solid #26114e;
 }
 
 body.blackout {
@@ -127,7 +151,8 @@ body.blackout .btn-call:hover {
   border-color: black;
 }
 
-body.blackout .btn-call:active:focus, body.blackout .btn-call:active:hover {
+body.blackout .btn-call:active:focus,
+body.blackout .btn-call:active:hover {
   background-color: #292929;
   border-color: black;
 }
@@ -140,7 +165,11 @@ body.blackout td span {
   color: #292929;
 }
 
-body.blackout .footer a {
+body.blackout footer p {
+  border-top: 1px solid #292929;
+}
+
+body.blackout footer a {
   color: #dddddd;
 }
 /*# sourceMappingURL=styles.css.map */

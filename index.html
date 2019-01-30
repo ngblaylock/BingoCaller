@@ -6,98 +6,98 @@
     <title>Bingo Caller</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
         crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="navbar-brand newGame"
-                    href="./">
-                    <img class="bingo-logo" src="./img/bingo-logo.svg" alt="Bingo">
-                </a> </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a data-toggle="modal" data-target="#newGameModal" href="#">New Game</a></li>
-                    <li><a href="">* Generate Bingo Cards</a></li>
-                </ul>
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+        <a class="navbar-brand" href="/"><img class="bingo-logo" src="./img/bingo-logo.svg" alt="Bingo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" data-toggle="modal" data-target="#newGameModal" href="">New Game</a>
+                </li>
+            </ul>
         </div>
     </nav>
     <!-- First Container -->
     <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div>
-                        <p id="input">Start</p>
-                    </div>
-                    <div>
-                        <button type="button" class="btn btn-call btn-block btn-lg" id="call">Call</button>
-                        <div class="timer-group"><button id="timer"><i class="far fa-clock"></i> Start Timer</button><button
-                                id="timer-stop" class='hidden'><i class="fas fa-stop"></i> Stop Timer</button><span
-                                class="timer-display"></span></div>
+        <div class="row">
+            <div class="col-md-4">
+                <div>
+                    <p id="input">Start</p>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-call btn-block btn-lg" id="call">Call</button>
+                    <div class="timer-group">
+                        <button id="timer"><i class="far fa-clock"></i> Start Timer</button>
+                        <button id="timer-stop" class='d-none'><i class="fas fa-stop"></i> Stop Timer</button>
+                        <span class="timer-display"></span>
                     </div>
                 </div>
-                <div class="col-md-8 bingo-cols">
-                    <table>
-                        <tr>
-                            <td>B</td>
-                            <td id="b"></td>
-                        </tr>
-                        <tr>
-                            <td>I</td>
-                            <td id="i"></td>
-                        </tr>
-                        <tr>
-                            <td>N</td>
-                            <td id="n"></td>
-                        </tr>
-                        <tr>
-                            <td>G</td>
-                            <td id="g"></td>
-                        </tr>
-                        <tr>
-                            <td>O</td>
-                            <td id="o"></td>
-                        </tr>
-                    </table>
-                </div>
+            </div>
+            <div class="col-md-8 bingo-cols">
+                <table>
+                    <tr>
+                        <td>B</td>
+                        <td id="b"></td>
+                    </tr>
+                    <tr>
+                        <td>I</td>
+                        <td id="i"></td>
+                    </tr>
+                    <tr>
+                        <td>N</td>
+                        <td id="n"></td>
+                    </tr>
+                    <tr>
+                        <td>G</td>
+                        <td id="g"></td>
+                    </tr>
+                    <tr>
+                        <td>O</td>
+                        <td id="o"></td>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>
+    </div>
     <footer>
-        <p style="text-align: center" class='footer'>
-            <a href="http://nathanblaylock.com"><img alt="Nathan's Logo" class="logo" src="LogoMark.png" /><br>v2
-                &copy; Nathan Blaylock 2019</a>
-        </p>
+        <img alt="Nathan's Logo" class="logo" src="LogoMark.png" style="display: block; margin: 0 auto;" />
+        <p><a href="http://nathanblaylock.com">v2 &copy; Nathan Blaylock 2019</a> &nbsp;|&nbsp; <a href="https://github.com/ngblaylock/BingoCaller"
+                target="_blank"><i class="fab fa-github"></i> View code on GitHub</a></p>
     </footer>
+
     <!-- NewGame Modal -->
-    <div id="newGameModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <!-- Modal content-->
+    <div class="modal fade" id="newGameModal" tabindex="-1" role="dialog" aria-labelledby="newGameModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">New Game</h4>
+                    <h5 class="modal-title" id="newGameModalLabel">New Game</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
-                    <p>Click "call" or press "space" to get a new number.</p>
-                    <p>Previously called numbers will appear in the darker box.</p>
-                    <hr>
                     <label for="timer-count">Set how many seconds for the timer</label>
                     <input type="text" class="form-control" value="15" id="timer-count">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-call newGame" data-dismiss="modal">New Game</button>
+                    <button type="button" class="btn btn-call" data-dismiss="modal" onclick="newGame()">New Game</button>
                 </div>
             </div>
         </div>
