@@ -10,8 +10,9 @@ Version 2 has upgraded from Bootstrap 3 to Bootstrap 4, vanilla JavaScript to jQ
 
 ## Known Bugs
 - [ ] Timer has odd behavior when clicking within a second of turning it off
-- [ ] Disable timer when call button is selected
-- [ ] Blackout causes `Start Timer` and `Stop Timer` to toggle
+- [x] ~~Disable timer when call button is selected~~
+- [x] ~~Blackout causes `Start Timer` and `Stop Timer` to toggle~~
+- [ ] Cannot change the timer while a game is in use. It will create a new game.
 
 ## Ideas
 
@@ -20,8 +21,8 @@ Version 2 has upgraded from Bootstrap 3 to Bootstrap 4, vanilla JavaScript to jQ
 - [x] Upgrade to Bootstrap 4
 - [x] Sitcky Footer
 - [x] 15 second timer (with customization)
-- [ ] Change font so `I` doesn't look like a `1`
-- [ ] Clicker integration for calling the next number
+- [x] Change font so `I` doesn't look like a `1`
+- [x] Clicker integration for calling the next number
 - [ ] Add in V1 Link
 - [ ] Shake up the background a little
 - [ ] Add in some simple animation

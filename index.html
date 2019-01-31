@@ -10,6 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
         crossorigin="anonymous">
@@ -26,6 +27,9 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  ml-auto">
+                    <li class="nav-item active">
+                            <a class="nav-link" id="simBlackout" href="javascript:simBlackout()">Sim Blackout</a>
+                        </li>
                 <li class="nav-item active">
                     <a class="nav-link" data-toggle="modal" data-target="#newGameModal" href="">New Game</a>
                 </li>
@@ -35,9 +39,9 @@
     <!-- First Container -->
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-lg-4">
                 <div>
-                    <p id="input">Start</p>
+                    <p id="input">&nbsp;</p>
                 </div>
                 <div>
                     <button type="button" class="btn btn-call btn-block btn-lg" id="call">Call</button>
@@ -48,7 +52,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-8 bingo-cols">
+            <div class="col-lg-8 bingo-cols">
                 <table>
                     <tr>
                         <td>B</td>
@@ -93,17 +97,21 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <p><strong>Tip:</strong> You can press the 'Enter/Return' key or the right arrow to call the next number.</p>
+                        <div class="alert alert-warning">
+                                <strong>Warning!</strong> You will not be able to change the time in the middle of a game. If you choose to change the time, you will need to start a new game.
+                              </div>
                     <label for="timer-count">Set how many seconds for the timer</label>
                     <input type="text" class="form-control" value="15" id="timer-count">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-call" data-dismiss="modal" onclick="newGame()">New Game</button>
+                        <button type="button" class="btn btn-link" data-dismiss="modal" aria-label="Cancel">Cancel</button> <button type="button" class="btn btn-call" data-dismiss="modal" onclick="newGame()">New Game</button>
                 </div>
             </div>
         </div>
     </div>
 </body>
-<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++     SCRIPT     +++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- ..................................................... SCRIPT ..................................................... -->
 <script src="script.js" type="text/javascript"></script>
 
 </html>

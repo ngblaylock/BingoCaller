@@ -81,16 +81,18 @@ function callNumber() {
         $('#input').html('Blackout!');
         $('body').addClass('blackout');
         $('#call').text('Game Over').addClass('disabled');
-        clearTime();
+        $('.timer-display').text("");
+        $('.timer-group').addClass('d-none')
+        clearTimer = true;
     } else {
         alert(numToCall + "There is an error with this program. Let me know at me@nathanblaylock.com")
     }
 }
 
 function newGame() {
-    $('#input').html('Start!');
     $('body').removeClass('blackout');
     $('#call').text('Call').removeClass('disabled');
+    $('.timer-group').removeClass('d-none')
     timerStart = $('#timer-count').val();
     $('#input').html("Start");
     $('#b').html("");
@@ -107,7 +109,8 @@ function newGame() {
 }
 
 $('#call').click(function () {
-    callNumber()
+    clearTime();
+    callNumber();
 });
 
 $('#timer').click(function () {
@@ -121,6 +124,27 @@ $('#timer-stop').click(function () {
     clearTime();
 });
 
+function simBlackout(){
+    for(i = 0; i < 76; i++){
+        callNumber();
+    }   
+}
+
+$(window).keydown(function(event){
+    
+    console.log(event.keyCode)
+    if(event.keyCode == 39 || event.keyCode == 13){
+        event.preventDefault();
+        callNumber();
+        // $('body').css('cursor', 'none');
+    }
+});
+
+// $(window).onmousemove(function(event){
+//     $('body').css('cursor', 'initial');
+// });
+
 $(document).ready(function () {
-    newGame();
+   newGame();
+   
 });

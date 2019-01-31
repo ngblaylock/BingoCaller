@@ -5,6 +5,11 @@ $blackout1: rgb(17, 17, 17);
 $blackout2: rgb(41, 41, 41);
 $blackout3: rgb(221, 221, 221);
 $footerHeight: 130px;
+$font: 'Roboto Slab',
+serif;
+$fontLight: 300;
+$fontRegular: 400;
+$fontBold: 700;
 
 html {
     position: relative;
@@ -14,6 +19,18 @@ html {
 body {
     background-color: $primary;
     margin-bottom: $footerHeight;
+}
+
+.row {
+    font-family: $font;
+}
+
+.btn-link {
+    color: $secondary;
+
+    &:hover {
+        color: $primary;
+    }
 }
 
 .timer-group {
@@ -104,18 +121,23 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: $footerHeight; 
+    height: $footerHeight;
     padding-top: 15px;
     text-align: center;
-    p{
+
+    p {
         color: white;
         margin-top: 15px;
         padding-top: 15px;
-        border-top: 1px solid $secondary
+        border-top: 1px solid $secondary;
+        padding-right: 15px;
+        padding-left: 15px;
     }
+
     a {
         color: $tertiary;
-        &:hover{
+
+        &:hover {
             color: white;
         }
     }
@@ -136,25 +158,36 @@ footer {
     padding-bottom: 10px;
 }
 
-.navbar-nav li a{
-border-bottom: 2px solid rgba(255, 255, 255, 0);
+.navbar-nav li a {
+    border-bottom: 2px solid rgba(255, 255, 255, 0);
+    cursor: pointer;
 
-&:hover {
-    border-bottom: 2px solid $primary;
-}
+    &:hover {
+        border-bottom: 2px solid $primary;
+    }
 }
 
 
 body.blackout {
+
     background-color: $blackout1;
 
     // .row{
     //     background-color: $blackout1;
     // }
 
+    #input {
+        font-size: 3em;
+    }
+
     .btn-call {
         background-color: $blackout2;
         border-color: darken($blackout2, 20%);
+    }
+
+    .row .btn-call {
+        cursor: no-drop;
+        margin-bottom: 15px;
     }
 
     .btn-call:hover {
@@ -177,9 +210,10 @@ body.blackout {
     }
 
     footer {
-        p{
+        p {
             border-top: 1px solid $blackout2
         }
+
         a {
             color: $blackout3;
         }

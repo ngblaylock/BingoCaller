@@ -8,6 +8,18 @@ body {
   margin-bottom: 130px;
 }
 
+.row {
+  font-family: "Roboto Slab", serif;
+}
+
+.btn-link {
+  color: #4d2891;
+}
+
+.btn-link:hover {
+  color: #26114e;
+}
+
 .timer-group {
   text-align: center;
   padding: 10px;
@@ -104,6 +116,8 @@ footer p {
   margin-top: 15px;
   padding-top: 15px;
   border-top: 1px solid #4d2891;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 footer a {
@@ -131,6 +145,7 @@ footer a:hover {
 
 .navbar-nav li a {
   border-bottom: 2px solid rgba(255, 255, 255, 0);
+  cursor: pointer;
 }
 
 .navbar-nav li a:hover {
@@ -141,9 +156,18 @@ body.blackout {
   background-color: #111111;
 }
 
+body.blackout #input {
+  font-size: 3em;
+}
+
 body.blackout .btn-call {
   background-color: #292929;
   border-color: black;
+}
+
+body.blackout .row .btn-call {
+  cursor: no-drop;
+  margin-bottom: 15px;
 }
 
 body.blackout .btn-call:hover {
