@@ -57,9 +57,9 @@
                 <div>
                     <button type="button" class="btn btn-call btn-block btn-lg" id="call">Call</button>
                     <div class="timer-group">
-                        <button id="timer"><i class="far fa-clock"></i> Start Timer</button>
-                        <button id="timer-stop" class='d-none'><i class="fas fa-stop"></i> Stop Timer</button>
-                        <span class="timer-display"></span>
+                        <button id="timerControl" class="timerRunning"><i class="far fa-clock"></i> Start Timer</button>
+                        <!-- <button id="timer-stop" class='d-none'><i class="fas fa-stop"></i> Stop Timer</button> -->
+                        <span id="timer"></span>
                     </div>
                 </div>
             </div>
@@ -92,7 +92,7 @@
     </div>
     <footer>
         <img alt="Nathan's Logo" class="logo" src="LogoMark.png" style="display: block; margin: 0 auto;" />
-        <p><a href="http://nathanblaylock.com">v2 &copy; Nathan Blaylock 2019</a> &nbsp;|&nbsp; <a href="https://github.com/ngblaylock/BingoCaller"
+        <p><a href="http://nathanblaylock.com">v2 &copy; Nathan Blaylock 2019</a> &nbsp;| &nbsp;<a href="https://github.com/ngblaylock/BingoCaller"
                 target="_blank"><i class="fab fa-github"></i> View code on GitHub</a></p>
     </footer>
 
@@ -109,11 +109,8 @@
                 </div>
                 <div class="modal-body">
                     <p><strong>Tip:</strong> You can press the 'Enter/Return' key or the right arrow to call the next number.</p>
-                        <div class="alert alert-warning">
-                                <strong>Warning!</strong> You will not be able to change the time in the middle of a game. If you choose to change the time, you will need to start a new game.
-                              </div>
-                    <label for="timer-count">Set how many seconds for the timer</label>
-                    <input type="text" class="form-control" value="15" id="timer-count">
+                    <label for="setTime">Set how many seconds for the timer</label>
+                    <input type="text" class="form-control" value="5" id="setTime">
                 </div>
                 <div class="modal-footer">
                         <button type="button" class="btn btn-link" data-dismiss="modal" aria-label="Cancel">Cancel</button> <button type="button" class="btn btn-call" data-dismiss="modal" onclick="newGame()">New Game</button>
@@ -123,6 +120,7 @@
     </div>
 </body>
 <!-- ..................................................... SCRIPT ..................................................... -->
-<script src="script.js" type="text/javascript"></script>
+<script src="scripts/script.js" type="text/javascript"></script>
+<script src="scripts/timer.js" type="text/javascript"></script>
 
 </html>

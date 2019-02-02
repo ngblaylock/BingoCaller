@@ -23,27 +23,6 @@ function shuffle(array) {
     return array;
 }
 
-function clearTime() {
-    $('.timer-display').text("");
-    clearTimer = true;
-    $('#timer-stop, #timer').toggleClass('d-none');
-}
-
-function startTimer(n) {
-    console.log(n)
-    if (clearTimer) {
-        return;
-    } else if (n <= 0) {
-        callNumber()
-        startTimer(timerStart);
-    } else {
-        $('.timer-display').text(n);
-        setTimeout(function () {
-            startTimer(n - 1);
-        }, 1000);
-    }
-}
-
 function generateNumber() {
     if (numbers.length > 0) {
         var fullNumber = fullNum(numbers[0]);
@@ -109,19 +88,7 @@ function newGame() {
 }
 
 $('#call').click(function () {
-    clearTime();
     callNumber();
-});
-
-$('#timer').click(function () {
-    $('#timer-stop, #timer').toggleClass('d-none');
-    clearTimer = false;
-    callNumber();
-    startTimer(timerStart);
-});
-
-$('#timer-stop').click(function () {
-    clearTime();
 });
 
 function simBlackout(){
