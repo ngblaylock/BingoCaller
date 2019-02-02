@@ -11,24 +11,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
         crossorigin="anonymous">
 
-        <!-- FAVICON FILES -->
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#26114e">
-<meta name="apple-mobile-web-app-title" content="Bingo Caller">
-<meta name="application-name" content="Bingo Caller">
-<meta name="msapplication-TileColor" content="#26114e">
-<meta name="theme-color" content="#ffffff">
+    <!-- FAVICON FILES -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#26114e">
+    <meta name="apple-mobile-web-app-title" content="Bingo Caller">
+    <meta name="application-name" content="Bingo Caller">
+    <meta name="msapplication-TileColor" content="#26114e">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
-    <!-- Navbar -->
+
+    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
         <a class="navbar-brand" href="/"><img class="bingo-logo" src="./img/bingo-logo.svg" alt="Bingo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -38,9 +39,9 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  ml-auto">
-                    <li class="nav-item active">
-                            <a class="nav-link" id="simBlackout" href="javascript:simBlackout()">Sim Blackout</a>
-                        </li>
+                <!-- <li class="nav-item active">
+                    <a class="nav-link" id="simBlackout" href="javascript:simBlackout()">Sim Blackout</a>
+                </li> -->
                 <li class="nav-item active">
                     <a class="nav-link" data-toggle="modal" data-target="#newGameModal" href="">New Game</a>
                 </li>
@@ -49,6 +50,8 @@
     </nav>
     <!-- First Container -->
     <div class="container">
+        <!-- ALERT -->
+        <div id="addAlert"></div>
         <div class="row">
             <div class="col-lg-4">
                 <div>
@@ -58,7 +61,6 @@
                     <button type="button" class="btn btn-call btn-block btn-lg" id="call">Call</button>
                     <div class="timer-group">
                         <button id="timerControl" class="timerRunning"><i class="far fa-clock"></i> Start Timer</button>
-                        <!-- <button id="timer-stop" class='d-none'><i class="fas fa-stop"></i> Stop Timer</button> -->
                         <span id="timer"></span>
                     </div>
                 </div>
@@ -108,12 +110,18 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p><strong>Tip:</strong> You can press the 'Enter/Return' key or the right arrow to call the next number.</p>
+                    <p><strong>Tip:</strong> You can press the 'Enter/Return' key or the right arrow to call the next
+                        number.</p>
                     <label for="setTime">Set how many seconds for the timer</label>
-                    <input type="text" class="form-control" value="5" id="setTime">
+                    <div class="form-inline">
+                        <input type="text" class="form-control" value="15" id="setTime">
+                        <!-- <button class="btn btn-link">Continue Current Game</button> -->
+                    </div>
+
                 </div>
                 <div class="modal-footer">
-                        <button type="button" class="btn btn-link" data-dismiss="modal" aria-label="Cancel">Cancel</button> <button type="button" class="btn btn-call" data-dismiss="modal" onclick="newGame()">New Game</button>
+                    <button type="button" class="btn btn-link" data-dismiss="modal" aria-label="Cancel">Cancel</button>
+                    <button type="button" class="btn btn-call" data-dismiss="modal" onclick="newGame()">New Game</button>
                 </div>
             </div>
         </div>

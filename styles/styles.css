@@ -36,11 +36,13 @@ body {
   border: none;
   color: #dcd0f3;
   text-decoration: none;
-  padding: 3px 6px;
+  padding: 6px 9px;
 }
 
 .timer-group button:hover {
-  border-bottom: 1px solid #dcd0f3;
+  cursor: pointer;
+  background: #301663 !important;
+  border-radius: 4px;
 }
 
 #input {

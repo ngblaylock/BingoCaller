@@ -5,42 +5,47 @@ var time;
 var freq = 1000;
 var timerInProcess = false;
 
-function myFunction() {
+function advanceTimer() {
     myVar = setTimeout(function () {
         $('#timer').html(time);
         time--;
-        if (time === 0) {
-            time = startTime;
-        }
+        if (time == startTime - 1) callNumber();
+        if (time === 0) time = startTime;
         if (!time && time !== 0) return;
-        console.log(time);
-        myFunction();
+        advanceTimer();
     }, freq);
 }
 
-function myStopFunction() {
+function stopTimer() {
+    $('#timerControl').addClass('timerRunning').html('<i class="far fa-clock"></i> Start Timer');
+    $('#timer').text('');
     clearTimeout(myVar);
 }
 
 $('#timerControl').click(function () {
     if ($(this).hasClass('timerRunning')) {
         // button says Start the timer
-        startTime = $('#setTime').val();
-        time = startTime - 1;
-        if (startTime) {
-            $('#timer').text(startTime)
-            $(this).text('Stop the Timer').removeClass('timerRunning');
-            myFunction();
-        } else {
-            $('#timer').html('<span class="text-danger">Invalid number. The timer was reset to the default timespan.</span>');
+        startTime = parseInt(Math.abs($('#setTime').val()));
+        if (!startTime) {
             $('#setTime').val(Default);
-            return;
+            startTime = Default;
+        //     $('#addAlert').html(`<div class="alert alert-warning alert-dismissible fade show" role="alert">
+        //     <strong>FYI</strong> Your custom time input was invalid and was reset to the default time.
+        //     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        //         <span aria-hidden="true">&times;</span>
+        //     </button>
+        // </div>`);
         }
+        time = startTime - 1;
+        $('#timer').html(startTime);
+        callNumber();
+        $('#feedback').html('');
+        $(this).html('STOP').removeClass('timerRunning');
+        advanceTimer();
+
     } else {
         // button says Stop the timer
-        $('#timer').text('');
-        $(this).addClass('timerRunning').text('Start the Timer');
-        myStopFunction();
+        stopTimer();
     }
 });
 
