@@ -101,6 +101,7 @@ function simBlackout(){
 $(window).keydown(function(event){
         if(event.keyCode == 39 || event.keyCode == 13){
         event.preventDefault();
+        stopTimer();
         callNumber();
         // $('body').css('cursor', 'none');
     }
