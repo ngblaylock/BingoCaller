@@ -9,10 +9,10 @@ Version 2 has upgraded from Bootstrap 3 to Bootstrap 4, vanilla JavaScript to jQ
 ---
 
 ## Known Bugs
-- [ ] Timer has odd behavior when clicking within a second of turning it off
+- [x] ~~Timer has odd behavior when clicking within a second of turning it off~~
 - [x] ~~Disable timer when call button is selected~~
 - [x] ~~Blackout causes `Start Timer` and `Stop Timer` to toggle~~
-- [ ] Cannot change the timer while a game is in use. It will create a new game.
+- [x] ~~Cannot change the timer while a game is in use. It will create a new game.~~
 
 ## Ideas
 
