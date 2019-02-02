@@ -48,10 +48,12 @@ body {
         border: none;
         color: $tertiary;
         text-decoration: none;
-        padding: 3px 6px;
+        padding: 6px 9px;
 
         &:hover {
-            border-bottom: 1px solid $tertiary;
+            cursor: pointer;
+            background: lighten($primary, 5%) !important;
+            border-radius: 4px;
         }
     }
 }

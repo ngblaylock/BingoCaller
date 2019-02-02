@@ -62,13 +62,13 @@ function callNumber() {
         $('#call').text('Game Over').addClass('disabled');
         $('.timer-display').text("");
         $('.timer-group').addClass('d-none')
-        clearTimer = true;
     } else {
         alert(numToCall + "There is an error with this program. Let me know at me@nathanblaylock.com")
     }
 }
 
 function newGame() {
+    stopTimer();
     $('body').removeClass('blackout');
     $('#call').text('Call').removeClass('disabled');
     $('.timer-group').removeClass('d-none')
@@ -88,6 +88,7 @@ function newGame() {
 }
 
 $('#call').click(function () {
+    stopTimer();
     callNumber();
 });
 
@@ -98,9 +99,7 @@ function simBlackout(){
 }
 
 $(window).keydown(function(event){
-    
-    console.log(event.keyCode)
-    if(event.keyCode == 39 || event.keyCode == 13){
+        if(event.keyCode == 39 || event.keyCode == 13){
         event.preventDefault();
         callNumber();
         // $('body').css('cursor', 'none');
@@ -113,5 +112,4 @@ $(window).keydown(function(event){
 
 $(document).ready(function () {
    newGame();
-   
 });
