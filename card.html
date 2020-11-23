@@ -67,6 +67,9 @@
     </nav>
     <!-- First Container -->
     <div class="container bingo-card pb-4">
+      <div class="print-only">
+        <img src="/img/bingo-logo.svg" alt="Bingo" class='d-block mx-auto mb-5 bingo-logo'>
+      </div>
       <table class="table table-bordered">
         <thead>
           <tr>
@@ -116,21 +119,43 @@
         </tbody>
       </table>
       <button class="btn btn-call btn-block generate">Generate New Card</button>
+      <button class="btn btn-link btn-block text-white" style="text-decoration: none;" onclick="window.print()"><i class="fas fa-print"></i> Print</button>
     </div>
     <footer>
-      <img
-        alt="Nathan's Logo"
-        class="logo"
-        src="img/LogoMark.png"
-        style="display: block; margin: 0 auto"
-      />
-      <p>
-        <a href="http://nathanblaylock.com">v2 &copy; Nathan Blaylock 2019</a>
-        &nbsp;| &nbsp;<a
-          href="https://github.com/ngblaylock/BingoCaller"
-          target="_blank"
-          ><i class="fab fa-github"></i> View code on GitHub</a
+      <div class="nb-media">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          version="1.1"
+          id="Layer_1"
+          x="0px"
+          y="0px"
+          viewBox="0 0 99 67.7"
+          style="enable-background: new 0 0 99 67.7"
+          xml:space="preserve"
         >
+          <style type="text/css">
+            .st0 {
+              fill: #ffffff;
+            }
+          </style>
+          <g>
+            <path
+              class="st0"
+              d="M89.5,58.2c-2.2,2.3-5.8,3.5-10.9,3.5H60.2V35.5h15.2c11.5,0,17.3,4.6,17.3,13.8   C92.7,52.9,91.6,55.8,89.5,58.2 M60.2,6.1h16.3c9.2,0,13.8,3.8,13.8,11.4c0,3.7-1.4,6.7-4.1,8.9c-2.7,2.2-6.7,3.2-12,3.2h-14V6.1z    M53.4,61.6h-5.5V6.1h5.5V61.6z M95.4,37.8C93,34.9,89.8,33,85.9,32c3.3-1.2,5.9-3.1,7.8-5.6c1.9-2.5,2.9-5.4,2.9-8.8   c0-5-1.6-9.2-4.9-12.6C88.4,1.7,83.2,0,75.9,0H41.1v33.5L20.6,0h-6.9l27.4,45.6V56C40.3,54.5,6.9,0,6.9,0H0v67.7h6.8V12.5   C7,12.8,41,67.7,41,67.7h36.4c7.6,0,13.1-1.8,16.5-5.5S99,54.1,99,48.8C99,44.3,97.8,40.7,95.4,37.8"
+            />
+          </g>
+        </svg>
+      </div>
+      <p>
+        <a href="http://nathanblaylock.com">v2 &copy; Nathan Blaylock 2020</a>
+        <span class="no-print">
+          &nbsp;| &nbsp;<a
+            href="https://github.com/ngblaylock/BingoCaller"
+            target="_blank"
+            ><i class="fab fa-github"></i> View code on GitHub</a
+          >
+        </span>
       </p>
     </footer>
     <script src="/scripts/generate-card.js"></script>

@@ -1,3 +1,67 @@
+@media print {
+  @page {
+    margin: 1.5in;
+  }
+  body {
+    background: white !important;
+  }
+  .no-print {
+    display: none;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .print-only .bingo-logo {
+    height: 200px !important;
+  }
+  table {
+    border: 10px solid #26114e !important;
+  }
+  table.table-bordered thead {
+    background: grey;
+  }
+  table.table-bordered thead tr th {
+    background: #26114e !important;
+    color: white;
+    font-size: 3em !important;
+    border: 10px solid #26114e !important;
+  }
+  table.table-bordered tbody td {
+    border: 10px solid #26114e !important;
+    vertical-align: middle;
+    color: #26114e !important;
+  }
+  table.table-bordered tbody td .free {
+    background: #26114e !important;
+    position: static !important;
+  }
+  table.table-bordered tbody td .active {
+    background: white !important;
+    color: #26114e !important;
+  }
+  table.table-bordered tbody div {
+    margin: 12px;
+    font-size: 2.5em;
+    min-height: 125px !important;
+  }
+  button {
+    visibility: hidden;
+  }
+  footer .nb-media .st-0 {
+    fill: #26114e !important;
+  }
+  footer .nb-media svg path {
+    fill: #26114e !important;
+  }
+  footer p {
+    border-color: #26114e !important;
+  }
+  footer a {
+    color: #26114e !important;
+    text-decoration: none !important;
+  }
+}
+
 html {
   position: relative;
   min-height: 100%;
@@ -10,6 +74,10 @@ body {
 
 .row {
   font-family: "Roboto Slab", serif;
+}
+
+.print-only {
+  display: none;
 }
 
 .bingo-card table {
@@ -26,6 +94,7 @@ body {
   padding: 3px;
   position: relative;
   width: 20%;
+  cursor: pointer;
 }
 
 .bingo-card table tbody td div {
@@ -43,6 +112,11 @@ body {
   transition: .3s ease-in-out;
 }
 
+.bingo-card table tbody td div:not(.active):hover {
+  background: rgba(38, 17, 78, 0.05);
+  border-radius: 100px;
+}
+
 .bingo-card table tbody td .active {
   background: #4d2891;
   color: white;
@@ -50,6 +124,7 @@ body {
 }
 
 .bingo-card table tbody td .free {
+  cursor: default;
   border-radius: 100px;
   background: #4d2891;
   color: white;
@@ -184,6 +259,11 @@ footer a {
 
 footer a:hover {
   color: white;
+}
+
+footer .nb-media {
+  max-width: 80px;
+  margin: 0 auto;
 }
 
 @media (min-width: 768px) {

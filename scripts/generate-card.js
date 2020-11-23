@@ -46,7 +46,7 @@ function generateCard() {
       $(cls).html(bingo[c].pop());
     }
   }
-  $(".free").html("Free");
+  $(".free").html("FREE");
 }
 
 $(document).ready(function () {

@@ -1,140 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Bingo Caller by Nathan Blaylock January 2016 -->
     <title>Bingo Caller</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-        crossorigin="anonymous">
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
 
     <!-- FAVICON FILES -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#26114e">
-    <meta name="apple-mobile-web-app-title" content="Bingo Caller">
-    <meta name="application-name" content="Bingo Caller">
-    <meta name="msapplication-TileColor" content="#26114e">
-    <meta name="theme-color" content="#ffffff">
-</head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#26114e" />
+    <meta name="apple-mobile-web-app-title" content="Bingo Caller" />
+    <meta name="application-name" content="Bingo Caller" />
+    <meta name="msapplication-TileColor" content="#26114e" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
 
-<body>
-
+  <body>
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
-        <a class="navbar-brand" href="/"><img class="bingo-logo" src="./img/bingo-logo.svg" alt="Bingo"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+      <a class="navbar-brand" href="/"
+        ><img class="bingo-logo" src="./img/bingo-logo.svg" alt="Bingo"
+      /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <a
-                  class="btn btn-call mx-auto"
-                  data-toggle="modal"
-                  data-target="#newGameModal"
-                  href=""
-                  >New Game</a
-                >
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/card.html">Bingo Card</a>
-              </li>
-            </ul>
-          </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <a
+          class="btn btn-call mx-auto"
+          data-toggle="modal"
+          data-target="#newGameModal"
+          href=""
+          >New Game</a
+        >
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/card.html">Bingo Card</a>
+          </li>
+        </ul>
+      </div>
     </nav>
     <!-- First Container -->
     <div class="container">
-        <!-- ALERT -->
-        <div id="addAlert"></div>
-        <div class="row">
-            <div class="col-lg-4">
-                <div>
-                    <p id="input">&nbsp;</p>
-                </div>
-                <div>
-                    <button type="button" class="btn btn-call btn-block btn-lg" id="call">Call</button>
-                    <div class="timer-group">
-                        <button id="timerControl" class="timerRunning"><i class="far fa-clock"></i> Start Timer</button>
-                        <span id="timer"></span>
-                    </div>
-                </div>
+      <!-- ALERT -->
+      <div id="addAlert"></div>
+      <div class="row">
+        <div class="col-lg-4">
+          <div>
+            <p id="input">&nbsp;</p>
+          </div>
+          <div>
+            <button
+              type="button"
+              class="btn btn-call btn-block btn-lg"
+              id="call"
+            >
+              Call
+            </button>
+            <div class="timer-group">
+              <button id="timerControl" class="timerRunning">
+                <i class="far fa-clock"></i> Start Timer
+              </button>
+              <span id="timer"></span>
             </div>
-            <div class="col-lg-8 bingo-cols">
-                <table>
-                    <tr>
-                        <td>B</td>
-                        <td id="b"></td>
-                    </tr>
-                    <tr>
-                        <td>I</td>
-                        <td id="i"></td>
-                    </tr>
-                    <tr>
-                        <td>N</td>
-                        <td id="n"></td>
-                    </tr>
-                    <tr>
-                        <td>G</td>
-                        <td id="g"></td>
-                    </tr>
-                    <tr>
-                        <td>O</td>
-                        <td id="o"></td>
-                    </tr>
-                </table>
-            </div>
+          </div>
         </div>
+        <div class="col-lg-8 bingo-cols">
+          <table>
+            <tr>
+              <td>B</td>
+              <td id="b"></td>
+            </tr>
+            <tr>
+              <td>I</td>
+              <td id="i"></td>
+            </tr>
+            <tr>
+              <td>N</td>
+              <td id="n"></td>
+            </tr>
+            <tr>
+              <td>G</td>
+              <td id="g"></td>
+            </tr>
+            <tr>
+              <td>O</td>
+              <td id="o"></td>
+            </tr>
+          </table>
+        </div>
+      </div>
     </div>
     <footer>
-        <img alt="Nathan's Logo" class="logo" src="img/LogoMark.png" style="display: block; margin: 0 auto;" />
-        <p><a href="http://nathanblaylock.com">v2 &copy; Nathan Blaylock 2019</a> &nbsp;| &nbsp;<a href="https://github.com/ngblaylock/BingoCaller"
-                target="_blank"><i class="fab fa-github"></i> View code on GitHub</a></p>
+      <div class="nb-media">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          version="1.1"
+          id="Layer_1"
+          x="0px"
+          y="0px"
+          viewBox="0 0 99 67.7"
+          style="enable-background: new 0 0 99 67.7"
+          xml:space="preserve"
+        >
+          <style type="text/css">
+            .st0 {
+              fill: #ffffff;
+            }
+          </style>
+          <g>
+            <path
+              class="st0"
+              d="M89.5,58.2c-2.2,2.3-5.8,3.5-10.9,3.5H60.2V35.5h15.2c11.5,0,17.3,4.6,17.3,13.8   C92.7,52.9,91.6,55.8,89.5,58.2 M60.2,6.1h16.3c9.2,0,13.8,3.8,13.8,11.4c0,3.7-1.4,6.7-4.1,8.9c-2.7,2.2-6.7,3.2-12,3.2h-14V6.1z    M53.4,61.6h-5.5V6.1h5.5V61.6z M95.4,37.8C93,34.9,89.8,33,85.9,32c3.3-1.2,5.9-3.1,7.8-5.6c1.9-2.5,2.9-5.4,2.9-8.8   c0-5-1.6-9.2-4.9-12.6C88.4,1.7,83.2,0,75.9,0H41.1v33.5L20.6,0h-6.9l27.4,45.6V56C40.3,54.5,6.9,0,6.9,0H0v67.7h6.8V12.5   C7,12.8,41,67.7,41,67.7h36.4c7.6,0,13.1-1.8,16.5-5.5S99,54.1,99,48.8C99,44.3,97.8,40.7,95.4,37.8"
+            />
+          </g>
+        </svg>
+      </div>
+      <p>
+        <a href="http://nathanblaylock.com">v2 &copy; Nathan Blaylock 2020</a>
+        <span class="no-print">
+          &nbsp;| &nbsp;<a
+            href="https://github.com/ngblaylock/BingoCaller"
+            target="_blank"
+            ><i class="fab fa-github"></i> View code on GitHub</a
+          >
+        </span>
+      </p>
     </footer>
 
     <!-- NewGame Modal -->
-    <div class="modal fade" id="newGameModal" tabindex="-1" role="dialog" aria-labelledby="newGameModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="newGameModalLabel">New Game</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p><strong>Tip:</strong> You can press the 'Enter/Return' key or the right arrow to call the next
-                        number.</p>
-                    <label for="setTime">Set how many seconds for the timer</label>
-                    <div class="form-inline">
-                        <input type="text" class="form-control" value="15" id="setTime">
-                        <!-- <button class="btn btn-link">Continue Current Game</button> -->
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-link" data-dismiss="modal" aria-label="Cancel">Cancel</button>
-                    <button type="button" class="btn btn-call" data-dismiss="modal" onclick="newGame()">New Game</button>
-                </div>
+    <div
+      class="modal fade"
+      id="newGameModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="newGameModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="newGameModalLabel">New Game</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+              <strong>Tip:</strong> You can press the 'Enter/Return' key or the
+              right arrow to call the next number.
+            </p>
+            <label for="setTime">Set how many seconds for the timer</label>
+            <div class="form-inline">
+              <input type="text" class="form-control" value="15" id="setTime" />
+              <!-- <button class="btn btn-link">Continue Current Game</button> -->
             </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-link"
+              data-dismiss="modal"
+              aria-label="Cancel"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              class="btn btn-call"
+              data-dismiss="modal"
+              onclick="newGame()"
+            >
+              New Game
+            </button>
+          </div>
         </div>
+      </div>
     </div>
-</body>
-<!-- ..................................................... SCRIPT ..................................................... -->
-<script src="scripts/script.js" type="text/javascript"></script>
-<script src="scripts/timer.js" type="text/javascript"></script>
-
+  </body>
+  <!-- ..................................................... SCRIPT ..................................................... -->
+  <script src="scripts/script.js" type="text/javascript"></script>
+  <script src="scripts/timer.js" type="text/javascript"></script>
 </html>

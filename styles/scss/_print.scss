@@ -1,0 +1,76 @@
+@media print {
+  @page {
+    margin: 1.5in;
+  }
+
+  body {
+    background: white !important;
+  }
+  .no-print{
+    display: none;
+  }
+  .print-only{
+    display: block !important;
+    .bingo-logo{
+      height: 200px !important;
+    }
+  }
+  table {
+    border: 10px solid $primary !important;
+    &.table-bordered {
+      thead {
+        background: grey;
+        tr {
+          th {
+            background: $primary !important;
+            color: white;
+            font-size: 3em !important;
+            border: 10px solid $primary !important;
+          }
+        }
+      }
+      tbody {
+        td {
+          border: 10px solid $primary !important;
+          vertical-align: middle;
+          color: $primary !important;
+          .free {
+            background: $primary !important;
+            position: static !important;
+          }
+          .active{
+            background: white !important;
+            color: $primary !important;
+          }
+        }
+        div {
+          margin: 12px;
+          font-size: 2.5em;
+          min-height: 125px !important;
+        }
+      }
+    }
+  }
+  button {
+    visibility: hidden;
+  }
+  footer {
+    .nb-media {
+      .st-0 {
+        fill: $primary !important;
+      }
+      svg {
+        path {
+          fill: $primary !important;
+        }
+      }
+    }
+    p {
+      border-color: $primary !important;
+    }
+    a {
+      color: $primary !important;
+      text-decoration: none !important;
+    }
+  }
+}
