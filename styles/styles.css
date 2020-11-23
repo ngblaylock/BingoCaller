@@ -1,6 +1,7 @@
 @media print {
   @page {
     margin: 1.5in;
+    /*webkit says no*/
   }
   body {
     background: white !important;
@@ -10,15 +11,10 @@
   }
   .print-only {
     display: block !important;
+    color: #26114e !important;
   }
   .print-only .bingo-logo {
     height: 200px !important;
-  }
-  table {
-    border: 10px solid #26114e !important;
-  }
-  table.table-bordered thead {
-    background: grey;
   }
   table.table-bordered thead tr th {
     background: #26114e !important;
@@ -39,10 +35,13 @@
     background: white !important;
     color: #26114e !important;
   }
-  table.table-bordered tbody div {
+  table.table-bordered tbody td div {
     margin: 12px;
     font-size: 2.5em;
     min-height: 125px !important;
+  }
+  table.table-bordered tbody td div:hover {
+    background: transparent !important;
   }
   button {
     visibility: hidden;
@@ -52,9 +51,6 @@
   }
   footer .nb-media svg path {
     fill: #26114e !important;
-  }
-  footer p {
-    border-color: #26114e !important;
   }
   footer a {
     color: #26114e !important;
@@ -87,7 +83,7 @@ body {
 
 .bingo-card table thead {
   font-size: 1.7em;
-  background: #dddddd;
+  background: #dee2e6;
 }
 
 .bingo-card table tbody td {
@@ -108,11 +104,11 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
-.bingo-card table tbody td div:not(.active):hover {
+.bingo-card table tbody td div:not(.active):not(.free):hover {
   background: rgba(38, 17, 78, 0.05);
   border-radius: 100px;
 }

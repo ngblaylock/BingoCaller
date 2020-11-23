@@ -68,7 +68,11 @@
     <!-- First Container -->
     <div class="container bingo-card pb-4">
       <div class="print-only">
-        <img src="/img/bingo-logo.svg" alt="Bingo" class='d-block mx-auto mb-5 bingo-logo'>
+        <img
+          src="/img/bingo-logo.svg"
+          alt="Bingo"
+          class="d-block mx-auto mb-5 bingo-logo"
+        />
       </div>
       <table class="table table-bordered">
         <thead>
@@ -98,7 +102,7 @@
           <tr>
             <td><div class="b3"></div></td>
             <td><div class="i3"></div></td>
-            <td><div class="n3 free active"></div></td>
+            <td><div class="n3 free"></div></td>
             <td><div class="g3"></div></td>
             <td><div class="o3"></div></td>
           </tr>
@@ -119,7 +123,13 @@
         </tbody>
       </table>
       <button class="btn btn-call btn-block generate">Generate New Card</button>
-      <button class="btn btn-link btn-block text-white" style="text-decoration: none;" onclick="window.print()"><i class="fas fa-print"></i> Print</button>
+      <button
+        class="btn btn-link btn-block text-white"
+        style="text-decoration: none"
+        onclick="window.print()"
+      >
+        <i class="fas fa-print"></i> Print
+      </button>
     </div>
     <footer>
       <div class="nb-media">
@@ -147,16 +157,17 @@
           </g>
         </svg>
       </div>
-      <p>
+      <p class="no-print">
         <a href="http://nathanblaylock.com">v2 &copy; Nathan Blaylock 2020</a>
-        <span class="no-print">
-          &nbsp;| &nbsp;<a
-            href="https://github.com/ngblaylock/BingoCaller"
-            target="_blank"
-            ><i class="fab fa-github"></i> View code on GitHub</a
-          >
-        </span>
+        &nbsp;| &nbsp;<a
+          href="https://github.com/ngblaylock/BingoCaller"
+          target="_blank"
+          ><i class="fab fa-github"></i> View code on GitHub</a
+        >
       </p>
+      <div class="print-only mt-3">
+        &copy; Nathan Blaylock 2020 | bingo.nathanblaylock.com
+      </div>
     </footer>
     <script src="/scripts/generate-card.js"></script>
   </body>

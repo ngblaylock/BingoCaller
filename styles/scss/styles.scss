@@ -26,8 +26,8 @@ body {
   font-family: $font;
 }
 
-.print-only{
-    display: none;
+.print-only {
+  display: none;
 }
 
 .bingo-card {
@@ -36,7 +36,7 @@ body {
     text-align: center;
     thead {
       font-size: 1.7em;
-      background: $blackout3;
+      background: #dee2e6;
     }
     tbody {
       td {
@@ -49,10 +49,10 @@ body {
           display: flex;
           justify-content: center;
           align-items: center;
-          transition: .3s ease-in-out;
-          &:not(.active):hover{
-              background: rgba($primary, .05);
-              border-radius: 100px;
+          transition: 0.3s ease-in-out;
+          &:not(.active):not(.free):hover {
+            background: rgba($primary, 0.05);
+            border-radius: 100px;
           }
         }
         .active {
@@ -61,7 +61,7 @@ body {
           border-radius: 100px;
         }
         .free {
-            cursor: default;
+          cursor: default;
           border-radius: 100px;
           background: $secondary;
           color: white;
@@ -74,16 +74,16 @@ body {
   }
 }
 @media (min-width: 768px) {
-    .bingo-card {
-        max-width: 768px;
-      td{
-          div{
-              height: 100px;
-              font-size: 1.4em;
-          }
+  .bingo-card {
+    max-width: 768px;
+    td {
+      div {
+        height: 100px;
+        font-size: 1.4em;
       }
     }
   }
+}
 
 .btn-link {
   color: $secondary;
@@ -203,17 +203,17 @@ footer {
       color: white;
     }
   }
-  .nb-media{
-      max-width: 80px;
-      margin: 0 auto;
+  .nb-media {
+    max-width: 80px;
+    margin: 0 auto;
   }
 }
 
 @media (min-width: 768px) {
-    .navbar {
-      border-radius: 0px;
-    }
+  .navbar {
+    border-radius: 0px;
   }
+}
 
 .bingo-logo {
   height: 50px;

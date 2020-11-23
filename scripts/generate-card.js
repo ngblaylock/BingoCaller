@@ -56,5 +56,7 @@ $(document).ready(function () {
 $(".generate").click(generateCard);
 
 $('.bingo-card td').click(function(){
-  $(this).children().toggleClass('active')
+  if(!$(this).has('.free').length){
+    $(this).children().toggleClass('active')
+  }
 })

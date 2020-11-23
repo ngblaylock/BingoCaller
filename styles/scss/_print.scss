@@ -1,6 +1,6 @@
 @media print {
   @page {
-    margin: 1.5in;
+    margin: 1.5in; /*webkit says no*/
   }
 
   body {
@@ -11,15 +11,14 @@
   }
   .print-only{
     display: block !important;
+    color: $primary !important;
     .bingo-logo{
       height: 200px !important;
     }
   }
   table {
-    border: 10px solid $primary !important;
     &.table-bordered {
       thead {
-        background: grey;
         tr {
           th {
             background: $primary !important;
@@ -42,11 +41,14 @@
             background: white !important;
             color: $primary !important;
           }
-        }
-        div {
-          margin: 12px;
-          font-size: 2.5em;
-          min-height: 125px !important;
+          div {
+            margin: 12px;
+            font-size: 2.5em;
+            min-height: 125px !important;
+            &:hover{
+              background: transparent !important;
+            }
+          }
         }
       }
     }
@@ -64,9 +66,6 @@
           fill: $primary !important;
         }
       }
-    }
-    p {
-      border-color: $primary !important;
     }
     a {
       color: $primary !important;
