@@ -50,7 +50,7 @@ body {
           justify-content: center;
           align-items: center;
           transition: 0.3s ease-in-out;
-          &:not(.active):not(.free):hover {
+          &:not(.active):hover {
             background: rgba($primary, 0.05);
             border-radius: 100px;
           }
@@ -68,6 +68,9 @@ body {
           position: absolute;
           right: 3px;
           left: 3px;
+          &:hover{
+            background: $secondary !important;
+          }
         }
       }
     }

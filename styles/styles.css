@@ -108,7 +108,7 @@ body {
   transition: 0.3s ease-in-out;
 }
 
-.bingo-card table tbody td div:not(.active):not(.free):hover {
+.bingo-card table tbody td div:not(.active):hover {
   background: rgba(38, 17, 78, 0.05);
   border-radius: 100px;
 }
@@ -127,6 +127,10 @@ body {
   position: absolute;
   right: 3px;
   left: 3px;
+}
+
+.bingo-card table tbody td .free:hover {
+  background: #4d2891 !important;
 }
 
 @media (min-width: 768px) {
